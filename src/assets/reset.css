@@ -404,26 +404,21 @@ textarea {
   resize: vertical;
 }
 
-/**
- * Custom Creatable
- */
+/** set font */
 @font-face {
-  font-family: Roboto;
-  font-weight: 400;
-  src: url(./fonts/Roboto-Regular-webfont.woff) format('woff'),
-    url(./fonts/Roboto-Regular-webfont.ttf) format('truetype');
+  font-family: AppleSDGothicNeo;
+  font-weight: normal;
+  src: url(./fonts/AppleSDGothicNeoR.ttf) format('truetype');
 }
 @font-face {
-  font-family: Roboto;
-  font-weight: 500;
-  src: url(./fonts/Roboto-Medium-webfont.woff) format('woff'),
-    url(./fonts/Roboto-Medium-webfont.ttf) format('truetype');
-}
-@font-face {
-  font-family: Roboto;
+  font-family: AppleSDGothicNeo;
   font-weight: 600;
-  src: url(./fonts/Roboto-Bold-webfont.woff) format('woff'),
-    url(./fonts/Roboto-Bold-webfont.ttf) format('truetype');
+  src: url(./fonts/AppleSDGothicNeoSB.ttf) format('truetype');
+}
+@font-face {
+  font-family: AppleSDGothicNeo;
+  font-weight: bold;
+  src: url(./fonts/AppleSDGothicNeoB.ttf) format('truetype');
 }
 
 /* prettier-ignore */
@@ -441,6 +436,6 @@ figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video , button, input,
 select, textarea {
-  color: #333;
-  font-family: Roboto, sans-serif;
+  color: #5e5e5e;
+  font-family: AppleSDGothicNeo, sans-serif;
 }
