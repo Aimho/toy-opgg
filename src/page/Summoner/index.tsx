@@ -8,6 +8,7 @@ import Header from './Header';
 import PreviousTiers from './PreviousTiers';
 import Profile from './Profile';
 import RankCard from './RankCard';
+import WinRate from './WinRate';
 
 import {
   Container,
@@ -43,6 +44,7 @@ const Summoner = () => {
       <DetailContainer>
         <MostContainer>
           <RankCard leagues={summoner.leagues} />
+          <WinRate name={summoner.name} />
         </MostContainer>
 
         <MatchesContainer>매치 정보들</MatchesContainer>

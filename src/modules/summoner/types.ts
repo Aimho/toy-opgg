@@ -1,5 +1,6 @@
 export interface ISummonerState {
   summoner?: ISummoner;
+  mostInfo: IMostInfo;
 }
 
 export interface ISummoner {
@@ -48,4 +49,27 @@ export interface ILeague {
     tierRankPoint: number;
   };
   wins: number;
+}
+
+export interface IChampions extends IRecentWinRate {
+  games: number;
+  kills: number;
+  deaths: number;
+  assists: number;
+  cs: number;
+  rank: number;
+}
+
+export interface IRecentWinRate {
+  id: number;
+  key: string;
+  name: string;
+  imageUrl: string;
+  wins: number;
+  losses: number;
+}
+
+export interface IMostInfo {
+  champions: IChampions[];
+  recentWinRate: IRecentWinRate[];
 }

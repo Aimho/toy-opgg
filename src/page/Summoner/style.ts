@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { StyledProps } from 'styled-components';
 
 export const Container = styled.main`
   min-height: 100vh;
@@ -92,7 +92,9 @@ export const ProfileInfoContainer = styled.div`
 
 export const DetailContainer = styled.section`
   max-width: 1000px;
-  margin: 10px auto;
+  margin: auto;
+  padding-top: 10px;
+  padding-bottom: 300px;
   display: flex;
   justify-content: space-between;
 `;
@@ -100,11 +102,13 @@ export const DetailContainer = styled.section`
 export const MostContainer = styled.aside`
   width: 100%;
   max-width: 300px;
+  > div + div {
+    margin-top: 8px;
+  }
 `;
 
 export const RankCardContainer = styled.div`
   padding: 10px 8px;
-  margin-bottom: 8px;
   display: flex;
   align-items: center;
   border: solid 1px #cdd2d2;
@@ -148,6 +152,109 @@ export const RankInfo = styled.span`
   }
 `;
 
-export const MatchesContainer = styled.div`
-  max-width: 690px;
+export const WinRateContainer = styled.div`
+  border: solid 1px #cdd2d2;
 `;
+
+export const WinRateTabContainer = styled.span`
+  display: flex;
+  button {
+    width: 50%;
+    padding: 15px 24px;
+    color: #879292;
+    font-size: 12px;
+    background-color: #f2f2f2;
+    border-bottom: solid 1px #cdd2d2;
+    &.active {
+      color: #5e5e5e;
+      font-weight: bold;
+      background-color: transparent;
+      border-bottom: 0px;
+    }
+    & + button {
+      border-left: solid 1px #cdd2d2;
+    }
+  }
+`;
+
+const CardContainer = styled.div`
+  display: flex;
+  align-items: center;
+  padding-right: 17px;
+  &:not(:last-child) {
+    border-bottom: solid 1px #cdd2d2;
+  }
+  .champion-img {
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+  h5 {
+    color: inherit;
+    font-size: 13px;
+  }
+`;
+export const ChampionsCardContainer = styled(CardContainer)`
+  padding: 4px 15px;
+  .champion-img {
+    width: 45px;
+    height: 45px;
+  }
+  .name {
+    max-width: 65px;
+    color: #5e5e5e;
+    margin-right: auto;
+  }
+  .grade {
+    text-align: center;
+  }
+  .rate {
+    margin-left: 24px;
+    text-align: center;
+    color: #5e5e5e;
+    &.max {
+      color: #c6443e;
+    }
+  }
+  h5 {
+    margin-bottom: 3px;
+  }
+  p {
+    font-size: 11px;
+    color: #879292;
+  }
+`;
+export const RecentWinRateCardContainer = styled(CardContainer).attrs(
+  (props: StyledProps<{ winRate: number }>) => ({
+    winRate: props.winRate ? props.winRate : 100
+  })
+)`
+  padding: 8px 15px;
+  .champion-img {
+    width: 32px;
+    height: 32px;
+  }
+  h5 {
+    &.name {
+      color: #5e5e5e;
+      margin-right: auto;
+      max-width: 65px;
+    }
+    &.rate {
+      color: #879292;
+      margin-right: 12px;
+    }
+  }
+  .rate-bar {
+    min-width: 120px;
+    padding: 4px;
+    display: flex;
+    justify-content: space-between;
+    color: #fff;
+    border-radius: 4px;
+    background: ${(props) => `linear-gradient(to right,
+            #1f8ecd ${props.winRate}%, #ee5a52 ${props.winRate}%);
+          }`};
+  }
+`;
+
+export const MatchesContainer = styled.div``;
