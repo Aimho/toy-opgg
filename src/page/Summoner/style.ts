@@ -94,4 +94,60 @@ export const DetailContainer = styled.section`
   max-width: 1000px;
   margin: 10px auto;
   display: flex;
+  justify-content: space-between;
+`;
+
+export const MostContainer = styled.aside`
+  width: 100%;
+  max-width: 300px;
+`;
+
+export const RankCardContainer = styled.div`
+  padding: 10px 8px;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  border: solid 1px #cdd2d2;
+  background-color: #f2f2f2;
+`;
+
+export const RankImg = styled.span`
+  display: block;
+  width: 104px;
+  height: 104px;
+  margin-right: 8px;
+  background-repeat: no-repeat;
+  background-position: center;
+  &.solo {
+    background-size: contain;
+  }
+  &.team {
+    background-size: 64px 64px;
+  }
+`;
+
+export const RankInfo = styled.span`
+  display: block;
+  font-size: 12px;
+  color: #879292;
+  p {
+    color: inherit;
+    margin-bottom: 4px;
+    line-height: 1.43;
+    &.title {
+      font-size: 11px;
+    }
+    b {
+      color: #353a3a;
+    }
+  }
+  h5 {
+    color: #1f8ecd;
+    font-size: 15px;
+    margin-bottom: 6px;
+  }
+`;
+
+export const MatchesContainer = styled.div`
+  max-width: 690px;
 `;

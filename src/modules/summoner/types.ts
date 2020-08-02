@@ -4,23 +4,7 @@ export interface ISummonerState {
 
 export interface ISummoner {
   ladderRank: ILadderRank;
-  leagues: {
-    hasResults: boolean;
-    losses: number;
-    tierRank: {
-      division: string;
-      imageUrl: string;
-      lp: number;
-      name: string;
-      season: number;
-      shortString: string;
-      string: string;
-      tier: string;
-      tierDivision: string;
-      tierRankPoint: number;
-    };
-    wins: number;
-  }[];
+  leagues: ILeague[];
   level: number;
   name: string;
   previousTiers: IPreviousTier[];
@@ -46,4 +30,22 @@ export interface IPreviousTier {
 export interface ILadderRank {
   rank: number;
   rankPercentOfTop: number;
+}
+
+export interface ILeague {
+  hasResults: boolean;
+  losses: number;
+  tierRank: {
+    division: string;
+    imageUrl: string;
+    lp: number;
+    name: string;
+    season: number;
+    shortString: string;
+    string: string;
+    tier: string;
+    tierDivision: string;
+    tierRankPoint: number;
+  };
+  wins: number;
 }

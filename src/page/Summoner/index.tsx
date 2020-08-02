@@ -7,8 +7,15 @@ import { searchQueryToObject } from '../../utils/formatter';
 import Header from './Header';
 import PreviousTiers from './PreviousTiers';
 import Profile from './Profile';
+import RankCard from './RankCard';
 
-import { Container, BasicContainer, DetailContainer } from './style';
+import {
+  Container,
+  BasicContainer,
+  DetailContainer,
+  MatchesContainer,
+  MostContainer
+} from './style';
 
 const Summoner = () => {
   const { search } = useRouter();
@@ -33,7 +40,13 @@ const Summoner = () => {
         <Profile {...summoner} />
       </BasicContainer>
 
-      <DetailContainer>콘텐츠</DetailContainer>
+      <DetailContainer>
+        <MostContainer>
+          <RankCard leagues={summoner.leagues} />
+        </MostContainer>
+
+        <MatchesContainer>매치 정보들</MatchesContainer>
+      </DetailContainer>
     </Container>
   );
 };
