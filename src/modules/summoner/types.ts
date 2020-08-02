@@ -3,10 +3,7 @@ export interface ISummonerState {
 }
 
 export interface ISummoner {
-  ladderRank: {
-    rank: number;
-    rankPercentOfTop: number;
-  };
+  ladderRank: ILadderRank;
   leagues: {
     hasResults: boolean;
     losses: number;
@@ -26,20 +23,27 @@ export interface ISummoner {
   }[];
   level: number;
   name: string;
-  previousTiers: {
-    division: string;
-    imageUrl: string;
-    lp: number;
-    name: string;
-    season: number;
-    shortString: string;
-    string: string;
-    tier: string;
-    tierDivision: string;
-    tierRankPoint: number;
-  }[];
+  previousTiers: IPreviousTier[];
   profileBackgroundImageUrl: string;
   profileBorderImageUrl: string;
   profileImageUrl: string;
   url: string;
+}
+
+export interface IPreviousTier {
+  division: string;
+  imageUrl: string;
+  lp: number;
+  name: string;
+  season: number;
+  shortString: string;
+  string: string;
+  tier: string;
+  tierDivision: string;
+  tierRankPoint: number;
+}
+
+export interface ILadderRank {
+  rank: number;
+  rankPercentOfTop: number;
 }

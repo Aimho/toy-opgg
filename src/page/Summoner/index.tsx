@@ -4,9 +4,15 @@ import useRouter from '../../hooks/useRouter';
 import useSummoner from '../../modules/summoner/useSummoner';
 import { searchQueryToObject } from '../../utils/formatter';
 
+import Header from './Header';
+import PreviousTiers from './PreviousTiers';
+import Profile from './Profile';
+
+import { Container, BasicContainer, DetailContainer } from './style';
+
 const Summoner = () => {
   const { search } = useRouter();
-  const { onGetSummoner } = useSummoner();
+  const { summoner, onGetSummoner } = useSummoner();
 
   useLayoutEffect(() => {
     const query = searchQueryToObject(search);
@@ -15,7 +21,21 @@ const Summoner = () => {
     }
   }, [search, onGetSummoner]);
 
-  return <div>소환사 정보</div>;
+  // Todo Loading
+  if (!summoner) return null;
+
+  return (
+    <Container>
+      <Header />
+
+      <BasicContainer>
+        <PreviousTiers previousTiers={summoner.previousTiers} />
+        <Profile {...summoner} />
+      </BasicContainer>
+
+      <DetailContainer>콘텐츠</DetailContainer>
+    </Container>
+  );
 };
 
 export default Summoner;

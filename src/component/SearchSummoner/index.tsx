@@ -49,6 +49,7 @@ const SearchSummoner = (props: SearchSummonerProps) => {
 
   return (
     <Container
+      className="search-summoner"
       ref={popoverRef}
       style={{ width: props.width ? props.width : '260px' }}
     >
