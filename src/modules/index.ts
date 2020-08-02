@@ -1,10 +1,10 @@
 import { combineReducers } from 'redux';
-import cart from './cart';
-import fruits from './fruits';
+import item from './item';
+import summoner from './summoner';
 
 const rootReducer = combineReducers({
-  cart,
-  fruits
+  item,
+  summoner
 });
 
 export default rootReducer;

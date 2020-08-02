@@ -1,22 +1,19 @@
-import React, { useLayoutEffect, useEffect } from "react";
-import { Route, Switch, RouteProps } from "react-router-dom";
+import React, { useLayoutEffect } from 'react';
+import { Route, Switch, RouteProps } from 'react-router-dom';
 
-import useRouter from "../hooks/useRouter";
-import useFruits from "../modules/fruits/useFruits";
+import useItem from '../modules/item/useItem';
 
-import Main from "./Main";
-import Cart from "./Cart";
+import Main from './Main';
+import Summoner from './Summoner';
 
 const Container = () => {
-  const { pathName } = useRouter();
-  const { onGetFruits } = useFruits();
+  const { onGetItems } = useItem();
 
-  useLayoutEffect(onGetFruits, []);
-  useEffect(() => window.scrollTo(0, 0), [pathName]);
+  useLayoutEffect(onGetItems, []);
 
   const routes: RouteProps[] = [
-    { path: "/", component: Main, exact: true },
-    { path: "/cart", component: Cart, exact: true },
+    { path: '/', component: Main, exact: true },
+    { path: '/summoner', component: Summoner, exact: false }
   ];
 
   return (
