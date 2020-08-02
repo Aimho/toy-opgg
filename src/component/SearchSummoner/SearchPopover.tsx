@@ -31,21 +31,27 @@ const SearchPopover = (props: SearchPopoverProps) => {
       return <li className="empty">{label}</li>;
     }
 
-    const onFavoriteItem = (index: number, item: ISearchItem) => {
+    const onFavoriteItem = (item: ISearchItem) => {
       const items = [...props.recentSearches];
-      items.splice(index, 1, {
+      const targetIndex = items.map((value) => value.name).indexOf(item.name);
+      items.splice(targetIndex, 1, {
         ...item,
         isFavorites: !item.isFavorites
       });
       props.setRecentSearch(items);
     };
 
-    const onDeleteItem = (index: number, item: ISearchItem) => {
+    const onDeleteItem = (item: ISearchItem) => {
       const items = [...props.recentSearches];
-      items.splice(index, 1, {
-        ...item,
-        isRecent: !item.isRecent
-      });
+      const targetIndex = items.map((value) => value.name).indexOf(item.name);
+      if (items[targetIndex].isFavorites) {
+        items.splice(targetIndex, 1, {
+          ...item,
+          isRecent: !item.isRecent
+        });
+      } else {
+        items.splice(targetIndex, 1);
+      }
       props.setRecentSearch(items);
     };
 
@@ -56,11 +62,11 @@ const SearchPopover = (props: SearchPopoverProps) => {
             <p onClick={() => props.onSearch(item.name)}>{item.name}</p>
             <button
               className={item.isFavorites ? 'active' : ''}
-              onClick={() => onFavoriteItem(index, item)}
+              onClick={() => onFavoriteItem(item)}
             >
               <StarIcon width="16" height="16" />
             </button>
-            <button onClick={() => onDeleteItem(index, item)}>
+            <button onClick={() => onDeleteItem(item)}>
               <CloseIcon width="16" height="16" />
             </button>
           </li>

@@ -41,7 +41,9 @@ const SearchSummoner = (props: SearchSummonerProps) => {
     } else {
       items.push(searchItem);
     }
-    setItem('recentSummoners', uniqBy(items, 'name'));
+    const result = uniqBy(items, 'name');
+    setItem('recentSummoners', result);
+    setRecentSearch(result);
 
     // summary search 시작
     props.onSearch(name);
