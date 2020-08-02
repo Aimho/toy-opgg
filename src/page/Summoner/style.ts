@@ -189,6 +189,7 @@ const CardContainer = styled.div`
     margin-right: 10px;
   }
   h5 {
+    text-align: inherit;
     color: inherit;
     font-size: 13px;
   }
@@ -204,7 +205,7 @@ export const ChampionsCardContainer = styled(CardContainer)`
     color: #5e5e5e;
     margin-right: auto;
   }
-  .grade {
+  .kda {
     text-align: center;
   }
   .rate {

@@ -1,6 +1,6 @@
 export interface ISummonerState {
   summoner?: ISummoner;
-  mostInfo: IMostInfo;
+  mostInfo?: IMostInfo;
 }
 
 export interface ISummoner {

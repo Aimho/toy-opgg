@@ -59,6 +59,11 @@ const SearchSummoner = (props: SearchSummonerProps) => {
         type="search"
         placeholder="소환사 검색, 챔피언.."
         value={props.value}
+        onKeyUp={(e) => {
+          if (e.keyCode === 13) {
+            onSearch();
+          }
+        }}
         onChange={(e) => props.onChange(e.target.value)}
         onFocus={() => setPopoverActive(true)}
       />

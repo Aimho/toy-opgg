@@ -15,12 +15,7 @@ const actions = { getSummoner, getMostInfo };
 type Action = ActionType<typeof actions>;
 
 // initialState
-const initialState: ISummonerState = {
-  mostInfo: {
-    champions: [],
-    recentWinRate: []
-  }
-};
+const initialState: ISummonerState = {};
 
 // reducer
 const cart = createReducer<ISummonerState, Action>(initialState, {

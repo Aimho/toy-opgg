@@ -10,8 +10,7 @@ function useSummoner() {
   // state
   const state = useSelector((state: RootState) => state.summoner);
   const summoner = state.summoner;
-  const champions = state.mostInfo.champions;
-  const recentWinRate = state.mostInfo.recentWinRate;
+  const mostInfo = state.mostInfo;
 
   // dispatch functions
   const dispatch = useDispatch();
@@ -54,8 +53,7 @@ function useSummoner() {
   return {
     summoner,
     onGetSummoner,
-    champions,
-    recentWinRate,
+    mostInfo,
     onGetMostInfo
   };
 }

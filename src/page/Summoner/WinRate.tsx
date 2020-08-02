@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
 
 import useSummoner from '../../modules/summoner/useSummoner';
+
 import ColorPrint from '../../component/ColorPrint';
+import Tooltip from '../../component/Tooltip';
 
 import {
   WinRateContainer,
@@ -16,11 +18,16 @@ interface WinRateProps {
 
 const WinRate = ({ name }: WinRateProps) => {
   const [tabKey, setTabKey] = useState('champions');
-  const { champions, recentWinRate, onGetMostInfo } = useSummoner();
+  const { mostInfo, onGetMostInfo } = useSummoner();
 
   useEffect(() => {
     onGetMostInfo(name);
   }, [name, onGetMostInfo]);
+
+  if (!mostInfo) return null;
+
+  const champions = mostInfo.champions;
+  const recentWinRate = mostInfo.recentWinRate;
 
   const TabButton: React.FC<{ tabKey: string }> = (props) => (
     <button
@@ -49,10 +56,16 @@ const WinRate = ({ name }: WinRateProps) => {
                 />
                 <div className="name">
                   <h5>{item.name}</h5>
-                  <p>CS {item.cs} (2.4)</p>
+                  <Tooltip message="평균 CS (CS/분)">
+                    <p>CS {item.cs} (2.4)</p>
+                  </Tooltip>
                 </div>
-                <div className="grade">
-                  <h5>{ColorPrint.KDA(Number(KDA), '평점')}</h5>
+                <div className="kda">
+                  <Tooltip
+                    message={`(K ${item.kills} + A ${item.assists}) / D ${item.deaths}`}
+                  >
+                    <h5>{ColorPrint.KDA(Number(KDA), '평점')}</h5>
+                  </Tooltip>
                   <p>
                     {item.kills} / {item.deaths} / {item.assists}
                   </p>
