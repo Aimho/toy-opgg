@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
 import useSummoner from '../../modules/summoner/useSummoner';
+import { getKDA, getWinRate } from '../../utils/calculate';
 
 import ColorPrint from '../../component/ColorPrint';
 import Tooltip from '../../component/Tooltip';
@@ -17,6 +18,7 @@ interface WinRateProps {
 }
 
 const WinRate = ({ name }: WinRateProps) => {
+  // champions, recentWinRate
   const [tabKey, setTabKey] = useState('champions');
   const { mostInfo, onGetMostInfo } = useSummoner();
 
@@ -43,9 +45,12 @@ const WinRate = ({ name }: WinRateProps) => {
       return (
         <React.Fragment>
           {champions.map((item, index) => {
-            const winRate = Math.floor((item.wins / item.games) * 100);
+            const winRate = getWinRate({
+              wins: item.wins,
+              totalPlay: item.games
+            });
             const rateClassName = winRate >= 60 ? 'rate max' : 'rate';
-            const KDA = ((item.kills + item.assists) / item.deaths).toFixed(2);
+            const KDA = getKDA({ ...item });
 
             return (
               <ChampionsCardContainer key={index}>
@@ -64,7 +69,7 @@ const WinRate = ({ name }: WinRateProps) => {
                   <Tooltip
                     message={`(K ${item.kills} + A ${item.assists}) / D ${item.deaths}`}
                   >
-                    <h5>{ColorPrint.KDA(Number(KDA), '평점')}</h5>
+                    <h5>{ColorPrint.KDA(KDA, '평점')}</h5>
                   </Tooltip>
                   <p>
                     {item.kills} / {item.deaths} / {item.assists}
@@ -85,7 +90,7 @@ const WinRate = ({ name }: WinRateProps) => {
       <React.Fragment>
         {recentWinRate.map((item, index) => {
           const totalPlay = item.wins + item.losses;
-          const winRate = Math.floor((item.wins / totalPlay) * 100);
+          const winRate = getWinRate({ wins: item.wins, totalPlay });
 
           return (
             <RecentWinRateCardContainer key={index} winRate={winRate}>

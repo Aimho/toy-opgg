@@ -1,4 +1,4 @@
-import styled, { StyledProps } from 'styled-components';
+import styled, { StyledProps, css } from 'styled-components';
 
 export const Container = styled.main`
   min-height: 100vh;
@@ -31,6 +31,7 @@ export const PreviousTier = styled.span`
   margin: 0 6px;
   padding: 4px 5px;
   border: solid 1px #d0d3d4;
+  border-radius: 2px;
   background-color: #e0e3e3;
   color: #657070;
   font-size: 11px;
@@ -112,6 +113,7 @@ export const RankCardContainer = styled.div`
   display: flex;
   align-items: center;
   border: solid 1px #cdd2d2;
+  border-radius: 2px;
   background-color: #f2f2f2;
 `;
 
@@ -154,6 +156,7 @@ export const RankInfo = styled.span`
 
 export const WinRateContainer = styled.div`
   border: solid 1px #cdd2d2;
+  border-radius: 2px;
 `;
 
 export const WinRateTabContainer = styled.span`
@@ -258,4 +261,217 @@ export const RecentWinRateCardContainer = styled(CardContainer).attrs(
   }
 `;
 
-export const MatchesContainer = styled.div``;
+export const MatchesContainer = styled.div`
+  max-width: 690px;
+  width: 100%;
+  > .summary + div {
+    margin-bottom: 8px;
+  }
+`;
+
+export const SummaryContainer = styled.section`
+  border: solid 1px #cdd2d2;
+  border-radius: 2px;
+`;
+
+export const SummaryHeaderContainer = styled.div`
+  display: block;
+  padding: 12px 16px;
+  padding-bottom: 0px;
+  width: 100%;
+  background-color: #f2f2f2;
+  border-bottom: solid 1px #cdd2d2;
+  button {
+    margin-bottom: -2px;
+    display: inline-block;
+    margin-right: 24px;
+    padding-bottom: 8px;
+    border-bottom: solid 2px transparent;
+    font-size: 12px;
+    &.active {
+      color: #1f8ecd;
+      border-color: #1f8ecd;
+      font-weight: bold;
+    }
+  }
+`;
+
+export const SummaryContentContainer = styled.div`
+  display: flex;
+`;
+
+const summaryContentChild = css`
+  padding-top: 16px;
+  padding-right: 16px;
+  padding-left: 16px;
+  padding-bottom: 24px;
+  &:not(:last-child) {
+    border-right: solid 1px #cdd2d2;
+  }
+`;
+
+export const SummaryInfoContainer = styled.div`
+  ${summaryContentChild}
+  display: flex;
+  align-items: center;
+  padding-left: 35px;
+`;
+
+export const SummaryRecord = styled.span`
+  display: block;
+  margin-right: 35px;
+  text-align: center;
+  p.record {
+    font-size: 12px;
+    color: #666;
+    margin-bottom: 14px;
+  }
+`;
+
+export const SummaryKDAContainer = styled.span`
+  display: block;
+  text-align: center;
+`;
+
+export const SummaryKDARecord = styled.h5`
+  font-size: 11px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 6px;
+  span.deaths {
+    color: #c6443e;
+  }
+  span.divider {
+    color: #999;
+    font-weight: normal;
+  }
+`;
+
+export const SummaryKDARate = styled.h4`
+  display: inline-flex;
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+  b {
+    margin-left: 8px;
+    color: #c6443e;
+  }
+`;
+
+export const SummaryChampContainer = styled.div`
+  ${summaryContentChild}
+`;
+
+export const SummaryChampCardContainer = styled.span`
+  display: flex;
+  align-items: center;
+  &:not(:last-child) {
+    margin-bottom: 12px;
+  }
+`;
+
+export const SummaryChampImg = styled.img`
+  width: 34px;
+  height: 34px;
+  margin-right: 8px;
+  border-radius: 50%;
+`;
+export const SummaryEmptyChampImg = styled.span`
+  display: inline-block;
+  width: 34px;
+  height: 34px;
+  margin-right: 8px;
+  background-image: url(${require('../../assets/images/site.png')});
+  background-position: -106px -1668px;
+`;
+
+export const SummaryChampInfo = styled.p`
+  color: #333;
+  font-size: 14px;
+  line-height: 16px;
+  .champ-win-rate,
+  .champ-record,
+  .champ-kda,
+  .champ-none {
+    font-size: 11px;
+  }
+  .champ-win-rate {
+    color: inherit;
+    margin-right: 4px;
+    font-weight: bold;
+  }
+  .champ-record {
+    color: #555;
+    padding-right: 6px;
+    margin-right: 6px;
+    border-right: solid 1px #cdd2d2;
+  }
+  .champ-kda {
+    color: #555;
+    font-weight: bold;
+  }
+  .champ-none {
+    color: 999;
+  }
+`;
+
+export const SummaryPositionContainer = styled.div`
+  ${summaryContentChild}
+  p.title {
+    color: #666;
+    font-size: 12px;
+  }
+`;
+
+export const SummaryPositionInfoContainer = styled.span`
+  display: flex;
+  align-items: center;
+  margin-top: 24px;
+`;
+
+export const SummaryPositionImg = styled.div`
+  width: 36px;
+  margin-right: 8px;
+  text-align: center;
+  span {
+    display: inline-block;
+    width: 28px;
+    height: 28px;
+    background-image: url(${require('../../assets/images/site.png')});
+    &.adc {
+      background-position: -112px -2536px;
+    }
+    &.mid {
+      background-position: -112px -2691px;
+    }
+    &.sup {
+      background-position: -104px -2768px;
+      width: 36px;
+      height: 26px;
+    }
+    &.jng {
+      background-position: -116px -2613px;
+    }
+    &.top {
+      background-position: -112px -2844px;
+    }
+  }
+`;
+
+export const SummaryPositionInfo = styled(SummaryChampInfo)`
+  .position-rate {
+    font-size: 11px;
+    color: #1f8ecd;
+    font-weight: bold;
+    padding-right: 6px;
+    margin-right: 6px;
+    border-right: solid 1px #cdd2d2;
+  }
+  .win-rate {
+    font-size: 11px;
+    color: #333;
+    b {
+      color: #666;
+    }
+  }
+`;

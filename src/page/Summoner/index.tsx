@@ -9,6 +9,7 @@ import PreviousTiers from './PreviousTiers';
 import Profile from './Profile';
 import RankCard from './RankCard';
 import WinRate from './WinRate';
+import Summary from './Summary';
 
 import {
   Container,
@@ -47,7 +48,9 @@ const Summoner = () => {
           <WinRate name={summoner.name} />
         </MostContainer>
 
-        <MatchesContainer>매치 정보들</MatchesContainer>
+        <MatchesContainer>
+          <Summary name={summoner.name} />
+        </MatchesContainer>
       </DetailContainer>
     </Container>
   );

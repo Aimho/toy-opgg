@@ -1,6 +1,13 @@
+interface IKDA {
+  assists: number;
+  deaths: number;
+  kills: number;
+}
+
 export interface ISummonerState {
   summoner?: ISummoner;
   mostInfo?: IMostInfo;
+  matches?: IMatches;
 }
 
 export interface ISummoner {
@@ -51,11 +58,8 @@ export interface ILeague {
   wins: number;
 }
 
-export interface IChampions extends IRecentWinRate {
+export interface IChampions extends IRecentWinRate, IKDA {
   games: number;
-  kills: number;
-  deaths: number;
-  assists: number;
   cs: number;
   rank: number;
 }
@@ -72,4 +76,30 @@ export interface IRecentWinRate {
 export interface IMostInfo {
   champions: IChampions[];
   recentWinRate: IRecentWinRate[];
+}
+
+export interface IMatches {
+  champions: IMatchChampions[];
+  games: any[];
+  positions: IMatchPosition[];
+  summary: IMatchSummary;
+}
+
+export interface IMatchChampions extends IMatchSummary {
+  id: number;
+  imageUrl: string;
+  name: string;
+}
+
+export interface IMatchPosition {
+  games: number;
+  losses: number;
+  wins: number;
+  position: string;
+  positionName: string;
+}
+
+export interface IMatchSummary extends IKDA {
+  losses: number;
+  wins: number;
 }

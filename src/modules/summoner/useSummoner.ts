@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 
 import summonerApi from '../../api/summonerApi';
 import { RootState } from '../index';
-import { getSummoner, getMostInfo } from './index';
+import { getSummoner, getMostInfo, getMatches } from './index';
 import { IChampions, IRecentWinRate } from './types';
 
 function useSummoner() {
@@ -11,6 +11,7 @@ function useSummoner() {
   const state = useSelector((state: RootState) => state.summoner);
   const summoner = state.summoner;
   const mostInfo = state.mostInfo;
+  const matches = state.matches;
 
   // dispatch functions
   const dispatch = useDispatch();
@@ -50,11 +51,27 @@ function useSummoner() {
     [dispatch]
   );
 
+  const onGetMatches = useCallback(
+    (userName: string) => {
+      summonerApi(userName)
+        .getMatches()
+        .then((resp) => {
+          if (resp.data) {
+            dispatch(getMatches(resp.data));
+          }
+        })
+        .catch((e) => console.error('getMatches api error'));
+    },
+    [dispatch]
+  );
+
   return {
     summoner,
     onGetSummoner,
     mostInfo,
-    onGetMostInfo
+    onGetMostInfo,
+    matches,
+    onGetMatches
   };
 }
 
