@@ -3,18 +3,22 @@ import 'react-app-polyfill/stable';
 
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { IntlProvider } from 'react-intl';
 import { Provider } from 'react-redux';
 
 import App from './App';
+import locale from './locale';
 import configureStore from './store';
 import * as serviceWorker from './serviceWorker';
 
 const { store } = configureStore();
 
 ReactDOM.render(
-  <Provider store={store}>
-    <App />
-  </Provider>,
+  <IntlProvider locale="ko" messages={locale.ko}>
+    <Provider store={store}>
+      <App />
+    </Provider>
+  </IntlProvider>,
   document.getElementById('root')
 );
 
