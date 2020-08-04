@@ -10,6 +10,7 @@ import Profile from './Profile';
 import RankCard from './RankCard';
 import WinRate from './WinRate';
 import Summary from './Summary';
+import MatchDetail from './MatchDetail';
 
 import {
   Container,
@@ -21,7 +22,7 @@ import {
 
 const Summoner = () => {
   const { search } = useRouter();
-  const { summoner, onGetSummoner } = useSummoner();
+  const { summoner, onGetSummoner, matches } = useSummoner();
 
   useLayoutEffect(() => {
     const query = searchQueryToObject(search);
@@ -32,6 +33,23 @@ const Summoner = () => {
 
   // Todo Loading
   if (!summoner) return null;
+
+  const LoadMatchDetail = () => {
+    if (!matches) return null;
+    const query = searchQueryToObject(search);
+    const filterGames = [...matches.games];
+
+    if (query.filter) {
+      return filterGames
+        .filter((item) => item.gameType === query.filter)
+        .map((game, index) => (
+          <MatchDetail key={index} index={index} game={game} />
+        ));
+    }
+    return filterGames.map((game, index) => (
+      <MatchDetail key={index} index={index} game={game} />
+    ));
+  };
 
   return (
     <Container>
@@ -50,6 +68,7 @@ const Summoner = () => {
 
         <MatchesContainer>
           <Summary name={summoner.name} />
+          {LoadMatchDetail()}
         </MatchesContainer>
       </DetailContainer>
     </Container>

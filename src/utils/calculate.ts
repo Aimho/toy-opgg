@@ -21,3 +21,21 @@ interface getWinRateProps {
 export function getWinRate(props: getWinRateProps) {
   return Math.floor((props.wins / props.totalPlay) * 100);
 }
+
+/**
+ * diff today (오늘 - 비교날짜)
+ * @param date
+ */
+export function diffTodayDay(date: Date) {
+  const _MS_PER_DAY = 1000 * 60 * 60 * 24;
+  const today = new Date();
+  // Discard the time and time-zone information.
+  const utcDate = Date.UTC(date.getFullYear(), date.getMonth(), date.getDay());
+  const utcToday = Date.UTC(
+    today.getFullYear(),
+    today.getMonth(),
+    today.getDay()
+  );
+
+  return Math.floor((utcToday - utcDate) / _MS_PER_DAY);
+}

@@ -264,14 +264,12 @@ export const RecentWinRateCardContainer = styled(CardContainer).attrs(
 export const MatchesContainer = styled.div`
   max-width: 690px;
   width: 100%;
-  > .summary + div {
-    margin-bottom: 8px;
-  }
 `;
 
 export const SummaryContainer = styled.section`
   border: solid 1px #cdd2d2;
   border-radius: 2px;
+  margin-bottom: 8px;
 `;
 
 export const SummaryHeaderContainer = styled.div`
@@ -473,5 +471,88 @@ export const SummaryPositionInfo = styled(SummaryChampInfo)`
     b {
       color: #666;
     }
+  }
+`;
+
+export const MatchDetailContainer = styled.section`
+  height: 96px;
+  margin-top: 8px;
+  display: flex;
+  align-items: center;
+  &.renew {
+    border: solid 1px #a7a7a7;
+    background-color: #b6b6b6;
+  }
+  &.win {
+    border: solid 1px #a1b8cd;
+    background-color: #b0ceea;
+  }
+  &.losses {
+    border: solid 1px #c0aba8;
+    background-color: #d6b5b2;
+  }
+`;
+
+export const MatchType = styled.div`
+  padding: 14px 0;
+  width: 70px;
+  text-align: center;
+  border-color: inherit;
+  h5 {
+    font-weight: bold;
+    & + p {
+      margin-top: 4px;
+    }
+    &.renew {
+      color: #000;
+    }
+    &.win {
+      color: #2c709b;
+    }
+    &.losses {
+      color: #d0021b;
+    }
+  }
+  p,
+  h5 {
+    color: #555;
+    font-size: 11px;
+  }
+  hr {
+    width: 27px;
+    border-top: solid 1px;
+    border-color: inherit;
+    margin: 3px auto;
+    margin-bottom: 5px;
+  }
+`;
+
+export const MatchChamp = styled.div`
+  padding: 14px 0;
+  width: 100px;
+  .images {
+    display: flex;
+    margin-bottom: 9px;
+    > img {
+      border-radius: 50%;
+      margin-right: auto;
+    }
+    .spells {
+      margin-right: 4px;
+    }
+    .spells,
+    .peak {
+      img {
+        display: block;
+      }
+      img + img {
+        margin-top: 2px;
+      }
+    }
+  }
+  p {
+    text-align: center;
+    color: #555;
+    font-size: 11px;
   }
 `;

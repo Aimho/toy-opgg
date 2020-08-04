@@ -80,7 +80,7 @@ export interface IMostInfo {
 
 export interface IMatches {
   champions: IMatchChampions[];
-  games: any[];
+  games: IMatchGame[];
   positions: IMatchPosition[];
   summary: IMatchSummary;
 }
@@ -102,4 +102,55 @@ export interface IMatchPosition {
 export interface IMatchSummary extends IKDA {
   losses: number;
   wins: number;
+}
+
+export interface IMatchGame {
+  champion: {
+    imageUrl: string;
+    level: number;
+  };
+  createDate: number;
+  gameId: string;
+  gameLength: number;
+  gameType: string;
+  isWin: boolean;
+  items: { imageUrl: string }[];
+  mmr: number;
+  needRenew: false;
+  peak: string[];
+  spells: { imageUrl: string }[];
+  stats: {
+    general: {
+      assist: number;
+      contributionForKillRate: string;
+      cs: number;
+      csPerMin: number;
+      death: number;
+      goldEarned: number;
+      kdaString: string;
+      kill: number;
+      largestMultiKillString: string;
+      opScoreBadge: string;
+      totalDamageDealtToChampions: number;
+    };
+    ward: {
+      sightWardsBought: number;
+      visionWardsBought: number;
+    };
+  };
+  summonerId: string;
+  summonerName: string;
+  tierRankShort: string;
+}
+
+export interface IMatchGameDetail {
+  teamId: number;
+  players: {
+    champion: {
+      imageUrl: string;
+      level: number;
+    };
+    summonerId: string;
+    summonerName: string;
+  }[];
 }

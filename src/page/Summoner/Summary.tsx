@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 
+import useRouter from '../../hooks/useRouter';
 import useSummoner from '../../modules/summoner/useSummoner';
 
 import SummaryInfo from './SummaryInfo';
@@ -10,18 +11,20 @@ import {
   SummaryHeaderContainer,
   SummaryContentContainer
 } from './style';
+import { searchQueryToObject } from '../../utils/formatter';
 
 interface SummaryProps {
   name: string;
 }
 const Summary = ({ name }: SummaryProps) => {
   // 솔랭, 자유 5:5 랭크
-  const [tabKey, setTabKey] = useState('');
+  const { search, linkTo } = useRouter();
+  const query = searchQueryToObject(search);
   const { matches, onGetMatches } = useSummoner();
 
   useEffect(() => {
     onGetMatches(name);
-  }, [tabKey, name, onGetMatches]);
+  }, [name, onGetMatches]);
 
   if (!matches) return null;
 
@@ -30,14 +33,23 @@ const Summary = ({ name }: SummaryProps) => {
   const champions = matches.champions;
   const positions = matches.positions;
 
-  const TabButton: React.FC<{ tabKey: string }> = (props) => (
-    <button
-      className={tabKey === props.tabKey ? 'active' : ''}
-      onClick={() => setTabKey(props.tabKey)}
-    >
-      {props.children}
-    </button>
-  );
+  const TabButton: React.FC<{ tabKey: string }> = (props) => {
+    const isActive = () => {
+      if (!props.tabKey && !query.filter) return true;
+      if (props.tabKey === query.filter) return true;
+      return false;
+    };
+    return (
+      <button
+        className={isActive() ? 'active' : ''}
+        onClick={() =>
+          linkTo(`/summoner?userName=${name}&filter=${props.tabKey}`)
+        }
+      >
+        {props.children}
+      </button>
+    );
+  };
 
   return (
     <SummaryContainer>

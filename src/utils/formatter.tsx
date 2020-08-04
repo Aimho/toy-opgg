@@ -40,3 +40,15 @@ export const Intl = ({ id }: IntlProps) => {
   const message = formatMessage({ id: id.toLocaleLowerCase() });
   return <React.Fragment>{message}</React.Fragment>;
 };
+
+export function secondsToTime(sec: number) {
+  const hours = Math.floor(sec / (60 * 60));
+  const divisorForMinutes = sec % (60 * 60);
+  const minutes = Math.floor(divisorForMinutes / 60);
+  const divisorForSeconds = divisorForMinutes % 60;
+  const seconds = Math.ceil(divisorForSeconds);
+
+  return hours
+    ? `${hours}시 ${minutes}분 ${seconds}초`
+    : `${minutes}분 ${seconds}초`;
+}
