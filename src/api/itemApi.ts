@@ -1,11 +1,9 @@
 import axios from 'axios';
+import AppConfig from '../config';
 
 const itemApi = () => {
   // [GET] 아이템 정보
-  const getItems = () =>
-    axios.get(
-      'http://ddragon.leagueoflegends.com/cdn/10.15.1/data/ko_KR/item.json'
-    );
+  const getItems = () => axios.get(`${AppConfig.itemApi}`);
 
   return { getItems };
 };
