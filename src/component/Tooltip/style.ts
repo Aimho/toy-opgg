@@ -18,8 +18,12 @@ export const Message = styled.span`
   visibility: hidden;
   transform: translate(-50%, -100%);
   padding: 10px;
+  max-width: 500px;
+  /* for IE */
   display: flex;
   flex-direction: column;
+  /* for chrome */
+  width: max-content;
   background-color: #222727;
   color: #fff;
   font-size: 11px;
