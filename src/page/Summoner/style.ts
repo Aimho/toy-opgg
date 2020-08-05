@@ -9,8 +9,15 @@ export const HeaderContainer = styled.header`
   padding: 12px calc((100% - 1000px) / 2);
   padding-top: 53px;
   background-color: #1ea1f7;
+  @media only screen and (max-width: 960px) {
+    padding: 12px;
+  }
   .search-summoner {
     margin-left: auto;
+    @media only screen and (max-width: 960px) {
+      margin: auto;
+      width: 100% !important;
+    }
   }
 `;
 
@@ -24,6 +31,9 @@ export const PreviousTierContainer = styled.div`
   display: flex;
   align-items: center;
   margin-bottom: 10px;
+  @media only screen and (max-width: 960px) {
+    justify-content: center;
+  }
 `;
 
 export const PreviousTier = styled.span`
@@ -39,6 +49,9 @@ export const PreviousTier = styled.span`
 
 export const ProfileContainer = styled.div`
   display: flex;
+  @media only screen and (max-width: 960px) {
+    justify-content: center;
+  }
 `;
 
 export const ProfileImgContainer = styled.div`
@@ -98,11 +111,20 @@ export const DetailContainer = styled.section`
   padding-bottom: 300px;
   display: flex;
   justify-content: space-between;
+  @media only screen and (max-width: 960px) {
+    width: auto;
+    align-items: center;
+    flex-direction: column;
+  }
 `;
 
 export const MostContainer = styled.aside`
   width: 100%;
   max-width: 300px;
+  @media only screen and (max-width: 960px) {
+    max-width: calc(100% - 24px);
+    margin-bottom: 12px;
+  }
   > div + div {
     margin-top: 8px;
   }
@@ -266,6 +288,9 @@ export const RecentWinRateCardContainer = styled(CardContainer).attrs(
 export const MatchesContainer = styled.div`
   max-width: 690px;
   width: 100%;
+  @media only screen and (max-width: 960px) {
+    max-width: calc(100% - 24px);
+  }
 `;
 
 export const SummaryContainer = styled.section`
@@ -298,13 +323,19 @@ export const SummaryHeaderContainer = styled.div`
 
 export const SummaryContentContainer = styled.div`
   display: flex;
+  @media only screen and (max-width: 960px) {
+    flex-wrap: wrap;
+  }
 `;
 
 const summaryContentChild = css`
-  padding-top: 16px;
-  padding-right: 16px;
-  padding-left: 16px;
+  padding: 16px;
   padding-bottom: 24px;
+  @media only screen and (max-width: 960px) {
+    padding: 8px;
+    padding-bottom: 12px;
+    border-right: 0px;
+  }
   &:not(:last-child) {
     border-right: solid 1px #cdd2d2;
   }
@@ -315,6 +346,12 @@ export const SummaryInfoContainer = styled.div`
   display: flex;
   align-items: center;
   padding-left: 35px;
+  @media only screen and (max-width: 960px) {
+    width: 100%;
+    justify-content: center;
+    border-bottom: solid 1px #cdd2d2;
+    border-right: 0px !important;
+  }
 `;
 
 export const SummaryRecord = styled.span`
@@ -360,6 +397,9 @@ export const SummaryKDARate = styled.h4`
 
 export const SummaryChampContainer = styled.div`
   ${summaryContentChild}
+  @media only screen and (max-width: 960px) {
+    border-right: solid 1px #cdd2d2;
+  }
 `;
 
 export const SummaryChampCardContainer = styled.span`
@@ -483,6 +523,10 @@ export const MatchDetailContainer = styled.section`
   flex-wrap: wrap;
   align-items: center;
   text-align: center;
+  @media only screen and (max-width: 960px) {
+    width: 100%;
+    justify-content: center;
+  }
   &.renew {
     border: solid 1px #a7a7a7;
     background-color: #b6b6b6;
@@ -501,6 +545,9 @@ export const MatchTypeContainer = styled.div`
   padding: 14px 0;
   width: 70px;
   border-color: inherit;
+  @media only screen and (max-width: 960px) {
+    display: none;
+  }
   h5 {
     font-weight: bold;
     & + p {
@@ -615,6 +662,9 @@ export const MatchBadgeContainer = styled.span`
 
 export const MatchInfoContainer = styled.div`
   width: 90px;
+  @media only screen and (max-width: 960px) {
+    display: none;
+  }
   p {
     font-size: 11px;
     color: #555e5e;
@@ -685,6 +735,10 @@ export const MatchTeamContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  @media only screen and (max-width: 960px) {
+    width: calc(50% - 15px);
+    padding: 0 24px;
+  }
 `;
 
 export const MatchTeam = styled.span`
@@ -722,15 +776,27 @@ export const MatchCollapseBtn = styled.div`
   color: #555;
   border-left: solid 1px #549dc7;
   background-color: #b6b6b6;
+  @media only screen and (max-width: 960px) {
+    border-left: 0px;
+    background-color: transparent;
+  }
   &.win {
     color: #04609e;
     border-left: solid 1px #a7a7a7;
     background-color: #7fb0e1;
+    @media only screen and (max-width: 960px) {
+      border-left: 0px;
+      background-color: transparent;
+    }
   }
   &.losses {
     color: #c1433e;
     border-left: solid 1px #c8817c;
     background-color: #e89c95;
+    @media only screen and (max-width: 960px) {
+      border-left: 0px;
+      background-color: transparent;
+    }
   }
 
   .expand-icon {

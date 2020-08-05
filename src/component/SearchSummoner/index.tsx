@@ -37,9 +37,9 @@ const SearchSummoner = (props: SearchSummonerProps) => {
     if (targetIndex !== -1) {
       const result = { ...recentSearches[targetIndex], isRecent: true };
       items.splice(targetIndex, 1);
-      items.push(result);
+      items.unshift(result);
     } else {
-      items.push(searchItem);
+      items.unshift(searchItem);
     }
     const result = uniqBy(items, 'name');
     setItem('recentSummoners', result);
@@ -75,7 +75,7 @@ const SearchSummoner = (props: SearchSummonerProps) => {
 
       <SearchPopover
         active={!props.value && popoverActive}
-        onSearch={props.onSearch}
+        onSearch={onSearch}
         recentSearches={recentSearches}
         setRecentSearch={(items: ISearchItem[]) => {
           setRecentSearch(items);

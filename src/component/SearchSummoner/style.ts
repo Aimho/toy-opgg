@@ -24,6 +24,7 @@ export const PopoverContainer = styled.aside.attrs(
     active: props.active
   })
 )`
+  z-index: 1010;
   position: absolute;
   width: 100%;
   left: 0px;

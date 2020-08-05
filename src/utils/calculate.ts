@@ -19,6 +19,11 @@ interface getWinRateProps {
   wins: number;
   totalPlay: number;
 }
+/**
+ * 승률을 계산한다
+ * @param wins
+ * @param totalPlay
+ */
 export function getWinRate(props: getWinRateProps) {
   if (!props.wins && !props.totalPlay) return 0;
   return Math.floor((props.wins / props.totalPlay) * 100);

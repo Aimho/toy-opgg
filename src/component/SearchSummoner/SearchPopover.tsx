@@ -36,7 +36,6 @@ const SearchPopover = (props: SearchPopoverProps) => {
       const targetIndex = items.map((value) => value.name).indexOf(item.name);
       items.splice(targetIndex, 1, {
         ...item,
-        isRecent: true,
         isFavorites: !item.isFavorites
       });
       props.setRecentSearch(items);
