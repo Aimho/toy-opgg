@@ -28,6 +28,9 @@ export const Message = styled.span`
   color: #fff;
   font-size: 11px;
   line-height: 15px;
+  @media only screen and (max-width: 960px) {
+    display: none;
+  }
   &:after {
     ${tooltipPosition}
     top: 100%;
