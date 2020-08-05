@@ -1,6 +1,7 @@
 import React from 'react';
 
 const ColorPrint = () => {
+  // 색상표시 기준 KDA
   const KDA = (value: number, extra?: string) => {
     const color = () => {
       if (value >= 3) return '#2daf7f';
@@ -15,6 +16,7 @@ const ColorPrint = () => {
     );
   };
 
+  // 색상표시 기준 승률
   const WinRate = (value: number) => {
     const color = () => {
       if (value >= 60) return '#c6443e';
@@ -23,6 +25,7 @@ const ColorPrint = () => {
     return <span style={{ color: color() }}>{value}%</span>;
   };
 
+  // 색상표시 기준 평점
   const Grade = (value: number) => {
     const color = () => {
       if (value >= 6) return '#e19205';

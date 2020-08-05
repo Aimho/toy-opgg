@@ -92,7 +92,7 @@ export const ProfileInfoContainer = styled.div`
 `;
 
 export const DetailContainer = styled.section`
-  max-width: 1000px;
+  width: 1000px;
   margin: auto;
   padding-top: 10px;
   padding-bottom: 300px;
@@ -206,13 +206,15 @@ export const ChampionsCardContainer = styled(CardContainer)`
   .name {
     max-width: 65px;
     color: #5e5e5e;
-    margin-right: auto;
   }
   .kda {
+    margin-left: auto;
+    margin-right: 24px;
+    width: 75px;
     text-align: center;
   }
   .rate {
-    margin-left: 24px;
+    width: 34px;
     text-align: center;
     color: #5e5e5e;
     &.max {
@@ -475,10 +477,12 @@ export const SummaryPositionInfo = styled(SummaryChampInfo)`
 `;
 
 export const MatchDetailContainer = styled.section`
-  height: 96px;
+  min-height: 96px;
   margin-top: 8px;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
+  text-align: center;
   &.renew {
     border: solid 1px #a7a7a7;
     background-color: #b6b6b6;
@@ -493,10 +497,9 @@ export const MatchDetailContainer = styled.section`
   }
 `;
 
-export const MatchType = styled.div`
+export const MatchTypeContainer = styled.div`
   padding: 14px 0;
   width: 70px;
-  text-align: center;
   border-color: inherit;
   h5 {
     font-weight: bold;
@@ -527,32 +530,229 @@ export const MatchType = styled.div`
   }
 `;
 
-export const MatchChamp = styled.div`
+export const MatchChampContainer = styled.div`
   padding: 14px 0;
   width: 100px;
-  .images {
-    display: flex;
-    margin-bottom: 9px;
-    > img {
-      border-radius: 50%;
-      margin-right: auto;
-    }
-    .spells {
-      margin-right: 4px;
-    }
-    .spells,
-    .peak {
-      img {
-        display: block;
-      }
-      img + img {
-        margin-top: 2px;
-      }
-    }
-  }
   p {
     text-align: center;
     color: #555;
     font-size: 11px;
+  }
+`;
+export const MatchChampImgContainer = styled.span`
+  display: flex;
+  margin-bottom: 9px;
+  > img {
+    border-radius: 50%;
+    margin-right: auto;
+  }
+  .spells {
+    margin-right: 4px;
+  }
+  .spells,
+  .peak {
+    img {
+      display: block;
+    }
+    img + img {
+      margin-top: 2px;
+    }
+  }
+`;
+
+export const MatchKDAContainer = styled.div`
+  width: 113px;
+  .record {
+    font-size: 15px;
+    font-weight: bold;
+    color: #555e5e;
+    margin-bottom: 6px;
+    span.deaths {
+      color: #d0021b;
+    }
+    span.divider {
+      color: #948e8d;
+      font-weight: normal;
+    }
+  }
+  .kda {
+    margin-bottom: 7px;
+    font-size: 11px;
+    font-weight: bold;
+    color: #555e5e;
+    b {
+      color: '#333';
+    }
+  }
+`;
+
+export const MatchBadgeContainer = styled.span`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .badge {
+    padding: 3px 5px;
+    border-radius: 9px;
+    font-size: 10px;
+    color: #fff;
+    & + .badge {
+      margin-left: 4px;
+    }
+    &.kill {
+      background-color: #ec4f48;
+      border: solid 1px #bf3b36;
+    }
+    &.mvp {
+      background-color: #e19205;
+      border: solid 1px #b88a2a;
+    }
+    &.ace {
+      background-color: #8c51c5;
+      border: solid 1px #7f3590;
+    }
+  }
+`;
+
+export const MatchInfoContainer = styled.div`
+  width: 90px;
+  p {
+    font-size: 11px;
+    color: #555e5e;
+    &:not(:last-child) {
+      margin-top: 6px;
+    }
+    &.kill {
+      color: #d0021b;
+    }
+  }
+`;
+
+export const MatchItemsContainer = styled.div`
+  width: 114px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  .build-icon {
+    margin: 2px;
+    color: #1f8fcd;
+    &.losses {
+      color: #c6443e;
+    }
+  }
+  .ward {
+    margin-top: 7px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    color: #000;
+    .ward-icon {
+      margin-right: 4px;
+      color: #01619f;
+      &.losses {
+        color: #c8311e;
+      }
+    }
+  }
+`;
+
+export const MatchItemImg = styled.img`
+  width: 22px;
+  height: 22px;
+  border-radius: 2px;
+  margin: 2px;
+`;
+
+export const MatchItemDescContainer = styled.div`
+  text-align: left;
+  * {
+    font-weight: bold;
+    color: #fff;
+  }
+  p.item-name {
+    color: #00cfbc;
+  }
+  p.item-gold b {
+    color: #ffc659;
+    padding-left: 4px;
+  }
+`;
+
+export const MatchTeamContainer = styled.div`
+  width: 170px;
+`;
+
+export const MatchTeam = styled.span`
+  width: 50%;
+  display: inline-flex;
+  align-items: center;
+  img {
+    width: 16px;
+    height: 16px;
+    margin-right: 3px;
+  }
+  p {
+    color: #555;
+    font-size: 11px;
+    line-height: 16px;
+    max-width: 60px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    &.bold {
+      color: #000;
+    }
+  }
+`;
+
+export const MatchCollapseBtn = styled.div`
+  margin-left: auto;
+  width: 30px;
+  height: 96px;
+  display: flex;
+  align-items: flex-end;
+  cursor: pointer;
+  color: #555;
+  border: solid 1px #549dc7;
+  background-color: #b6b6b6;
+  &.win {
+    color: #04609e;
+    border: solid 1px #a7a7a7;
+    background-color: #7fb0e1;
+  }
+  &.losses {
+    color: #c1433e;
+    border: solid 1px #c8817c;
+    background-color: #e89c95;
+  }
+
+  .expand-icon {
+    transition: transform 0.3s;
+    &.active {
+      transform: rotate(180deg);
+    }
+  }
+`;
+
+export const MatchReportContainer = styled.section`
+  width: 100%;
+  height: 103px;
+  color: #111;
+  font-size: 14px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #555;
+  background-color: #b6b6b6;
+  &.win {
+    color: #04609e;
+    background-color: #7fb0e1;
+  }
+  &.losses {
+    color: #c1433e;
+    background-color: #e89c95;
   }
 `;

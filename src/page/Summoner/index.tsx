@@ -26,13 +26,16 @@ const Summoner = () => {
 
   useLayoutEffect(() => {
     const query = searchQueryToObject(search);
-    if (query && query.userName) {
-      onGetSummoner(query.userName);
-    }
+    onGetSummoner(query.userName);
   }, [search, onGetSummoner]);
 
-  // Todo Loading
-  if (!summoner) return null;
+  if (!summoner) {
+    return (
+      <Container>
+        <Header />
+      </Container>
+    );
+  }
 
   const LoadMatchDetail = () => {
     if (!matches) return null;
