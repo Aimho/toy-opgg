@@ -681,13 +681,18 @@ export const MatchItemDescContainer = styled.div`
 `;
 
 export const MatchTeamContainer = styled.div`
-  width: 170px;
+  width: 85px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 `;
 
 export const MatchTeam = styled.span`
-  width: 50%;
   display: inline-flex;
   align-items: center;
+  &:not(:last-child) {
+    margin-bottom: 2px;
+  }
   img {
     width: 16px;
     height: 16px;
@@ -715,16 +720,16 @@ export const MatchCollapseBtn = styled.div`
   align-items: flex-end;
   cursor: pointer;
   color: #555;
-  border: solid 1px #549dc7;
+  border-left: solid 1px #549dc7;
   background-color: #b6b6b6;
   &.win {
     color: #04609e;
-    border: solid 1px #a7a7a7;
+    border-left: solid 1px #a7a7a7;
     background-color: #7fb0e1;
   }
   &.losses {
     color: #c1433e;
-    border: solid 1px #c8817c;
+    border-left: solid 1px #c8817c;
     background-color: #e89c95;
   }
 

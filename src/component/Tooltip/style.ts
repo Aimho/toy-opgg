@@ -16,11 +16,10 @@ const tooltipPosition = css`
 export const Message = styled.span`
   ${tooltipPosition}
   visibility: hidden;
-  max-width: 300px;
-  width: max-content;
   transform: translate(-50%, -100%);
   padding: 10px;
-  display: block;
+  display: flex;
+  flex-direction: column;
   background-color: #222727;
   color: #fff;
   font-size: 11px;

@@ -10,9 +10,9 @@ interface MatchDetailTeamProps {
 }
 const MatchDetailTeam = ({ details, summonerName }: MatchDetailTeamProps) => {
   return (
-    <MatchTeamContainer>
+    <React.Fragment>
       {details.map((detail, detailIndex) => (
-        <React.Fragment key={detailIndex}>
+        <MatchTeamContainer key={detailIndex}>
           {detail.players.map((player, playerIndex) => {
             const boldName = summonerName === player.summonerName ? 'bold' : '';
             return (
@@ -22,9 +22,9 @@ const MatchDetailTeam = ({ details, summonerName }: MatchDetailTeamProps) => {
               </MatchTeam>
             );
           })}
-        </React.Fragment>
+        </MatchTeamContainer>
       ))}
-    </MatchTeamContainer>
+    </React.Fragment>
   );
 };
 
