@@ -51,7 +51,7 @@
 - 계산 불가능 하거나 찾을 수 없는 데이터는 zeplin에 명시된 고정 텍스트로 넣음
   - 챔피언 승률 분당 CS
   - 매치 상세 Summoner 챔피언 이름
-- Summary, 매치 상세 아이템 UI에 표시 개수보다 모자라면 DummyUI가 노출되도록 힘
+- Summary, 매치 상세 아이템 UI에 표시 개수보다 모자라면 DummyUI가 노출되도록 함
 - 반응형
   - 기본 스타일 Desktop
   - @media only screen and (max-width: 960px) Tablet Portrait
