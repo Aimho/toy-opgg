@@ -12,7 +12,7 @@
 - public
   - data: (json) 더미 데이터 파일(Netlify 배포 환경에서 사용)
 - src
-  - api: (axios) 과일 데이터 json 요청
+  - api: (axios) 데이터 json 요청
   - assets (fonts, reset.css, icons, images) 기본 스타일 및 리소스 파일
   - component: 재사용 컴포넌트
   - config: 환경변수
@@ -41,7 +41,7 @@
 - KDA 표시 및 색상 UI
   - KDA 계산, 승률 계산 하는 것을 재사용 함수(`calculate.ts`)로 분리함
   - 색상 표시하는 것을 별도의 컴포넌트로 분리함(`ColorPrint`) <br/>
-  [미적용] 색상기준에서 평점은 구현했으나 어디에 사용하는지 몰라서 적용하지 않음 (op.gg 페이지에서 확인한 결과 모두 KDA 색상으로 표시되는 것 같음...)
+    [미적용] 색상기준에서 평점은 구현했으나 어디에 사용하는지 몰라서 적용하지 않음 (op.gg 페이지에서 확인한 결과 모두 KDA 색상으로 표시되는 것 같음...)
 
 ### 요구 사항에 없지만 구현한 것
 
