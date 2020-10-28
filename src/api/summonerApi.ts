@@ -1,21 +1,17 @@
 import axios from 'axios';
-import AppConfig from '../config';
 
-const summonerApi = (summonerName: string) => {
-  const summonerUrl = `${AppConfig.opggApi}/summoner/${summonerName}`;
-
+const summonerApi = () => {
   // [GET] 소환사 정보
-  const getSummoner = () => axios.get(`${summonerUrl}`);
+  const getSummoner = () => axios.get(`/data/summoner.json`);
 
   // [GET] 소환사 match 상세정보
-  const getMatchDetail = (gameId: string) =>
-    axios.get(`${summonerUrl}/matchDetail/${gameId}`);
+  const getMatchDetail = () => axios.get(`/data/matchDetail.json`);
 
   // [GET] 소환사 match list
-  const getMatches = () => axios.get(`${summonerUrl}/matches`);
+  const getMatches = () => axios.get(`/data/matches.json`);
 
   // [GET] 소환사 most info
-  const getMostInfo = () => axios.get(`${summonerUrl}/mostInfo`);
+  const getMostInfo = () => axios.get(`/data/mostInfo.json`);
 
   return {
     getSummoner,

@@ -7,7 +7,7 @@ export const Container = styled.main`
   flex-direction: column;
   align-items: center;
   background-color: #1ea1f7;
-  @media only screen and (max-width: 960px) {
+  @media only screen and (max-width: 600px) {
     padding-top: 24px;
   }
 `;
@@ -15,7 +15,7 @@ export const Container = styled.main`
 export const Logo = styled.img`
   max-height: 200px;
   margin-bottom: 32px;
-  @media only screen and (max-width: 960px) {
+  @media only screen and (max-width: 600px) {
     max-height: 180px;
   }
 `;

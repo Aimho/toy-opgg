@@ -1,20 +1,25 @@
 import styled, { StyledProps, css } from 'styled-components';
 
 export const Container = styled.main`
+  min-width: 1080px;
   min-height: 100vh;
   background-color: #eaeaea;
+  overflow-x: auto;
+  @media only screen and (max-width: 600px) {
+    min-width: auto;
+  }
 `;
 
 export const HeaderContainer = styled.header`
   padding: 12px calc((100% - 1000px) / 2);
   padding-top: 53px;
   background-color: #1ea1f7;
-  @media only screen and (max-width: 960px) {
+  @media only screen and (max-width: 600px) {
     padding: 12px;
   }
   .search-summoner {
     margin-left: auto;
-    @media only screen and (max-width: 960px) {
+    @media only screen and (max-width: 600px) {
       margin: auto;
       width: 100% !important;
     }
@@ -31,7 +36,7 @@ export const PreviousTierContainer = styled.div`
   display: flex;
   align-items: center;
   margin-bottom: 10px;
-  @media only screen and (max-width: 960px) {
+  @media only screen and (max-width: 600px) {
     justify-content: center;
   }
 `;
@@ -49,7 +54,7 @@ export const PreviousTier = styled.span`
 
 export const ProfileContainer = styled.div`
   display: flex;
-  @media only screen and (max-width: 960px) {
+  @media only screen and (max-width: 600px) {
     justify-content: center;
   }
 `;
@@ -111,7 +116,7 @@ export const DetailContainer = styled.section`
   padding-bottom: 300px;
   display: flex;
   justify-content: space-between;
-  @media only screen and (max-width: 960px) {
+  @media only screen and (max-width: 600px) {
     width: auto;
     align-items: center;
     flex-direction: column;
@@ -121,7 +126,7 @@ export const DetailContainer = styled.section`
 export const MostContainer = styled.aside`
   width: 100%;
   max-width: 300px;
-  @media only screen and (max-width: 960px) {
+  @media only screen and (max-width: 600px) {
     max-width: calc(100% - 24px);
     margin-bottom: 12px;
   }
@@ -288,7 +293,7 @@ export const RecentWinRateCardContainer = styled(CardContainer).attrs(
 export const MatchesContainer = styled.div`
   max-width: 690px;
   width: 100%;
-  @media only screen and (max-width: 960px) {
+  @media only screen and (max-width: 600px) {
     max-width: calc(100% - 24px);
   }
 `;
@@ -323,7 +328,7 @@ export const SummaryHeaderContainer = styled.div`
 
 export const SummaryContentContainer = styled.div`
   display: flex;
-  @media only screen and (max-width: 960px) {
+  @media only screen and (max-width: 600px) {
     flex-wrap: wrap;
   }
 `;
@@ -331,7 +336,7 @@ export const SummaryContentContainer = styled.div`
 const summaryContentChild = css`
   padding: 16px;
   padding-bottom: 24px;
-  @media only screen and (max-width: 960px) {
+  @media only screen and (max-width: 600px) {
     padding: 8px;
     padding-bottom: 12px;
     border-right: 0px;
@@ -346,7 +351,7 @@ export const SummaryInfoContainer = styled.div`
   display: flex;
   align-items: center;
   padding-left: 35px;
-  @media only screen and (max-width: 960px) {
+  @media only screen and (max-width: 600px) {
     width: 100%;
     justify-content: center;
     border-bottom: solid 1px #cdd2d2;
@@ -397,7 +402,7 @@ export const SummaryKDARate = styled.h4`
 
 export const SummaryChampContainer = styled.div`
   ${summaryContentChild}
-  @media only screen and (max-width: 960px) {
+  @media only screen and (max-width: 600px) {
     border-right: solid 1px #cdd2d2;
   }
 `;
@@ -523,7 +528,7 @@ export const MatchDetailContainer = styled.section`
   flex-wrap: wrap;
   align-items: center;
   text-align: center;
-  @media only screen and (max-width: 960px) {
+  @media only screen and (max-width: 600px) {
     width: 100%;
     justify-content: center;
   }
@@ -545,7 +550,7 @@ export const MatchTypeContainer = styled.div`
   padding: 14px 0;
   width: 70px;
   border-color: inherit;
-  @media only screen and (max-width: 960px) {
+  @media only screen and (max-width: 600px) {
     display: none;
   }
   h5 {
@@ -662,7 +667,7 @@ export const MatchBadgeContainer = styled.span`
 
 export const MatchInfoContainer = styled.div`
   width: 90px;
-  @media only screen and (max-width: 960px) {
+  @media only screen and (max-width: 600px) {
     display: none;
   }
   p {
@@ -735,7 +740,7 @@ export const MatchTeamContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  @media only screen and (max-width: 960px) {
+  @media only screen and (max-width: 600px) {
     width: calc(50% - 15px);
     padding: 0 24px;
   }
@@ -776,7 +781,7 @@ export const MatchCollapseBtn = styled.div`
   color: #555;
   border-left: solid 1px #549dc7;
   background-color: #b6b6b6;
-  @media only screen and (max-width: 960px) {
+  @media only screen and (max-width: 600px) {
     border-left: 0px;
     background-color: transparent;
   }
@@ -784,7 +789,7 @@ export const MatchCollapseBtn = styled.div`
     color: #04609e;
     border-left: solid 1px #a7a7a7;
     background-color: #7fb0e1;
-    @media only screen and (max-width: 960px) {
+    @media only screen and (max-width: 600px) {
       border-left: 0px;
       background-color: transparent;
     }
@@ -793,7 +798,7 @@ export const MatchCollapseBtn = styled.div`
     color: #c1433e;
     border-left: solid 1px #c8817c;
     background-color: #e89c95;
-    @media only screen and (max-width: 960px) {
+    @media only screen and (max-width: 600px) {
       border-left: 0px;
       background-color: transparent;
     }

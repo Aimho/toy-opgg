@@ -1,0 +1,59 @@
+{
+  "summoner": {
+    "name": "aimho",
+    "level": 116,
+    "profileImageUrl": "https://opgg-static.akamaized.net/images/profile_icons/profileIcon1625.jpg",
+    "profileBorderImageUrl": "https://opgg-static.akamaized.net/images/borders2/challenger.png",
+    "url": "https://www.op.gg/summoner/userName=aimho",
+    "leagues": [
+      {
+        "hasResults": true,
+        "wins": 952,
+        "losses": 483,
+        "tierRank": {
+          "name": "솔랭",
+          "tier": "Bronze",
+          "tierDivision": "Bronze",
+          "string": "Bronze (541LP)",
+          "shortString": "B1",
+          "division": "i",
+          "imageUrl": "https://opgg-static.akamaized.net/images/medals/bronze_1.png",
+          "lp": 541,
+          "tierRankPoint": 124
+        }
+      },
+      {
+        "hasResults": true,
+        "wins": 95,
+        "losses": 547,
+        "tierRank": {
+          "name": "자유 5:5 랭크",
+          "tier": "Master",
+          "tierDivision": "Master",
+          "string": "Master (405LP)",
+          "shortString": "M1",
+          "division": "i",
+          "imageUrl": "https://opgg-static.akamaized.net/images/medals/master_1.png",
+          "lp": 405,
+          "tierRankPoint": 479
+        }
+      }
+    ],
+    "previousTiers": [
+      {
+        "name": "솔랭",
+        "tier": "Grandmaster",
+        "tierDivision": "Grandmaster",
+        "string": "Grandmaster (779LP)",
+        "shortString": "GM1",
+        "division": "i",
+        "imageUrl": "https://opgg-static.akamaized.net/images/medals/grandmaster_1.png",
+        "lp": 779,
+        "tierRankPoint": 194,
+        "season": 9
+      }
+    ],
+    "ladderRank": { "rank": 73972, "rankPercentOfTop": 54 },
+    "profileBackgroundImageUrl": "http://ddragon.leagueoflegends.com/cdn/img/champion/splash/Taliyah_0.jpg"
+  }
+}

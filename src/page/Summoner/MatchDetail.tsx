@@ -33,8 +33,8 @@ const MatchDetail = ({ game, index }: MatchDetailProps) => {
     if (!gameId || !summonerName) return;
 
     function onGetMatchDetail() {
-      summonerApi(summonerName)
-        .getMatchDetail(gameId)
+      summonerApi()
+        .getMatchDetail()
         .then((resp) => {
           if (resp.data && resp.data.teams) {
             setMatchDetail(resp.data.teams);

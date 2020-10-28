@@ -23,8 +23,8 @@ const Summary = ({ name }: SummaryProps) => {
   const { matches, onGetMatches } = useSummoner();
 
   useEffect(() => {
-    onGetMatches(name);
-  }, [name, onGetMatches]);
+    onGetMatches();
+  }, [onGetMatches]);
 
   if (!matches) return null;
 

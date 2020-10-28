@@ -23,8 +23,8 @@ const WinRate = ({ name }: WinRateProps) => {
   const { mostInfo, onGetMostInfo } = useSummoner();
 
   useEffect(() => {
-    onGetMostInfo(name);
-  }, [name, onGetMostInfo]);
+    onGetMostInfo();
+  }, [onGetMostInfo]);
 
   if (!mostInfo) return null;
 

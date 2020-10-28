@@ -15,55 +15,45 @@ function useSummoner() {
 
   // dispatch functions
   const dispatch = useDispatch();
-  const onGetSummoner = useCallback(
-    (userName: string) => {
-      summonerApi(userName)
-        .getSummoner()
-        .then((resp) => {
-          if (resp.data && resp.data.summoner) {
-            dispatch(getSummoner(resp.data.summoner));
-          }
-        })
-        .catch((e) => console.error('getSummoner api error'));
-    },
-    [dispatch]
-  );
+  const onGetSummoner = useCallback(() => {
+    summonerApi()
+      .getSummoner()
+      .then((resp) => {
+        if (resp.data && resp.data.summoner) {
+          dispatch(getSummoner(resp.data.summoner));
+        }
+      })
+      .catch((e) => console.error('getSummoner api error'));
+  }, [dispatch]);
 
-  const onGetMostInfo = useCallback(
-    (userName: string) => {
-      summonerApi(userName)
-        .getMostInfo()
-        .then((resp) => {
-          if (resp.data) {
-            // 게임 플레이 많은 순서로 정렬
-            const champions = resp.data.champions as IChampions[];
-            champions.sort((a, b) => b.games - a.games);
-            const recentWinRate = resp.data.recentWinRate as IRecentWinRate[];
-            recentWinRate.sort(
-              (a, b) => b.wins + b.losses - (a.wins + a.losses)
-            );
+  const onGetMostInfo = useCallback(() => {
+    summonerApi()
+      .getMostInfo()
+      .then((resp) => {
+        if (resp.data) {
+          console.log(resp.data);
+          // 게임 플레이 많은 순서로 정렬
+          const champions = resp.data.champions as IChampions[];
+          champions.sort((a, b) => b.games - a.games);
+          const recentWinRate = resp.data.recentWinRate as IRecentWinRate[];
+          recentWinRate.sort((a, b) => b.wins + b.losses - (a.wins + a.losses));
 
-            dispatch(getMostInfo({ champions, recentWinRate }));
-          }
-        })
-        .catch((e) => console.error('getMostInfo api error'));
-    },
-    [dispatch]
-  );
+          dispatch(getMostInfo({ champions, recentWinRate }));
+        }
+      })
+      .catch((e) => console.error('getMostInfo api error'));
+  }, [dispatch]);
 
-  const onGetMatches = useCallback(
-    (userName: string) => {
-      summonerApi(userName)
-        .getMatches()
-        .then((resp) => {
-          if (resp.data) {
-            dispatch(getMatches(resp.data));
-          }
-        })
-        .catch((e) => console.error('getMatches api error'));
-    },
-    [dispatch]
-  );
+  const onGetMatches = useCallback(() => {
+    summonerApi()
+      .getMatches()
+      .then((resp) => {
+        if (resp.data) {
+          dispatch(getMatches(resp.data));
+        }
+      })
+      .catch((e) => console.error('getMatches api error'));
+  }, [dispatch]);
 
   return {
     summoner,

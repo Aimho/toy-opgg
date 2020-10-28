@@ -25,8 +25,7 @@ const Summoner = () => {
   const { summoner, onGetSummoner, matches } = useSummoner();
 
   useLayoutEffect(() => {
-    const query = searchQueryToObject(search);
-    onGetSummoner(query.userName);
+    onGetSummoner();
   }, [search, onGetSummoner]);
 
   if (!summoner) {

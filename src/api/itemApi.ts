@@ -1,9 +1,8 @@
 import axios from 'axios';
-import AppConfig from '../config';
 
 const itemApi = () => {
   // [GET] 아이템 정보
-  const getItems = () => axios.get(`${AppConfig.itemApi}`);
+  const getItems = () => axios.get(`/data/item.json`);
 
   return { getItems };
 };

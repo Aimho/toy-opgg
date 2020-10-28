@@ -1,0 +1,95 @@
+{
+  "gameId": "296659165",
+  "teams": [
+    {
+      "teamId": 1,
+      "players": [
+        {
+          "champion": {
+            "imageUrl": "https://opgg-static.akamaized.net/images/lol/champion/Tristana.png",
+            "level": 7
+          },
+          "summonerId": "3739894",
+          "summonerName": "aimho"
+        },
+        {
+          "champion": {
+            "imageUrl": "https://opgg-static.akamaized.net/images/lol/champion/Viktor.png",
+            "level": 11
+          },
+          "summonerId": "2339347",
+          "summonerName": "deokdam"
+        },
+        {
+          "champion": {
+            "imageUrl": "https://opgg-static.akamaized.net/images/lol/champion/Malzahar.png",
+            "level": 6
+          },
+          "summonerId": "3743596",
+          "summonerName": "Swordart777"
+        },
+        {
+          "champion": {
+            "imageUrl": "https://opgg-static.akamaized.net/images/lol/champion/Qiyana.png",
+            "level": 3
+          },
+          "summonerId": "2266711",
+          "summonerName": "T1 Kuri"
+        },
+        {
+          "champion": {
+            "imageUrl": "https://opgg-static.akamaized.net/images/lol/champion/Qiyana.png",
+            "level": 3
+          },
+          "summonerId": "3289819",
+          "summonerName": "Iove galio"
+        }
+      ]
+    },
+    {
+      "teamId": 2,
+      "players": [
+        {
+          "champion": {
+            "imageUrl": "https://opgg-static.akamaized.net/images/lol/champion/Malzahar.png",
+            "level": 6
+          },
+          "summonerId": "2926471",
+          "summonerName": "백수넛"
+        },
+        {
+          "champion": {
+            "imageUrl": "https://opgg-static.akamaized.net/images/lol/champion/Malzahar.png",
+            "level": 6
+          },
+          "summonerId": "2251182",
+          "summonerName": "10k EGO"
+        },
+        {
+          "champion": {
+            "imageUrl": "https://opgg-static.akamaized.net/images/lol/champion/Anivia.png",
+            "level": 31
+          },
+          "summonerId": "1136228",
+          "summonerName": "Mango Fish"
+        },
+        {
+          "champion": {
+            "imageUrl": "https://opgg-static.akamaized.net/images/lol/champion/Jayce.png",
+            "level": 12
+          },
+          "summonerId": "3611054",
+          "summonerName": "Lehends"
+        },
+        {
+          "champion": {
+            "imageUrl": "https://opgg-static.akamaized.net/images/lol/champion/Lucian.png",
+            "level": 9
+          },
+          "summonerId": "2991924",
+          "summonerName": "원딜 왕자 이채환"
+        }
+      ]
+    }
+  ]
+}
