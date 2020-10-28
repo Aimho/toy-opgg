@@ -1,6 +1,4 @@
 ### 개요
-
-- 오피지지(http://www.op.gg/) 클론 코딩
 - WakaTime에 기록 작업 시간은 총 27h 35m 임
 - eslint, prettier 코드 스타일링은 에이팀벤처스(현 회사) 설정을 사용함
 - UI 스타일은 `styled-components`를 사용해서 구현함
