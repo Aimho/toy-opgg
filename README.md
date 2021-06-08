@@ -1,10 +1,10 @@
+OPGG 클론코딩 (https://quirky-shannon-ffef94.netlify.app)
+
 ### 개요
-- WakaTime에 기록 작업 시간은 총 27h 35m 임
-- eslint, prettier 코드 스타일링은 에이팀벤처스(현 회사) 설정을 사용함
 - UI 스타일은 `styled-components`를 사용해서 구현함
+- 소환사명은 아무거나 입력하면 더미데이터로 노출됨
 - 폴더 구조 및 추가 라이브러리는 CRA를 이용해 만든 [보일러 플레이트](https://github.com/Aimho/boilerplate-react)와 최근 작업물을 인용하여 진행함
 - `private` Repository에서 작업했으며, [결과물](https://quirky-shannon-ffef94.netlify.app/)은 Netlify로 배포함
-- 패키지 설치 (`yarn install`) 후 실행하면 동작함(`yarn start`)
 
 ### 폴더 구조
 
