@@ -1,4 +1,4 @@
-OPGG 클론코딩 (https://quirky-shannon-ffef94.netlify.app)
+OPGG 클론코딩 (https://aim-clone-opgg.netlify.app/)
 
 ### 개요
 - UI 스타일은 `styled-components`를 사용해서 구현함
